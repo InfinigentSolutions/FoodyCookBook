@@ -8,7 +8,7 @@ class RandomVC: UIViewController {
     // MARK: Internal
 
     @IBOutlet var tableView: UITableView!
-    
+
     lazy var closeButton: UIBarButtonItem = {
         let image = UIImage(systemName: "xmark")?.withTintColor(R.color.gray3() ?? .gray).withRenderingMode(.alwaysOriginal)
         return UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(btnClose))
@@ -16,14 +16,14 @@ class RandomVC: UIViewController {
 
     var meal: Meal?
     var ingredients: [(ingredient: String, measure: String)] = []
-    
+
     var isDetailView: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.tableFooterView = UIView()
-        
+
         if isDetailView {
             navigationItem.title = meal?.idMeal ?? ""
             navigationItem.leftBarButtonItem = closeButton
@@ -53,7 +53,7 @@ class RandomVC: UIViewController {
             print(error.debugDescription)
         } network: {}
     }
-    
+
     @IBAction func btnClose() {
         dismiss(animated: true, completion: nil)
     }
@@ -131,7 +131,7 @@ extension RandomVC: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         3
     }
-    
+
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
             case 1, 2:

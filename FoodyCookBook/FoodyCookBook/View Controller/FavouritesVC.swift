@@ -1,5 +1,7 @@
 import UIKit
 
+// MARK: - FavouritesVC
+
 class FavouritesVC: UIViewController {
 
     // MARK: Internal
@@ -44,6 +46,8 @@ class FavouritesVC: UIViewController {
     }
 }
 
+// MARK: - UITableViewDataSource, UITableViewDelegate
+
 extension FavouritesVC: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,14 +65,14 @@ extension FavouritesVC: UITableViewDataSource, UITableViewDelegate {
         cell.delegate = self
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let randomVC = R.storyboard.main.randomVC()!
         randomVC.meal = searchedMeals?.meals?[indexPath.row]
         randomVC.isDetailView = true
-        
+
         let navigationController = UINavigationController(rootViewController: randomVC)
-        
+
         present(navigationController, animated: true, completion: nil)
     }
 }
@@ -120,7 +124,7 @@ extension FavouritesVC: MealCellDelegate {
 
             UserDefaults.favouriteMeals = arrMeal
         }
-        
+
         getMeals()
     }
 }
