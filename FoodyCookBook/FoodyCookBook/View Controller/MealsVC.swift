@@ -73,7 +73,10 @@ extension MealsVC: UITableViewDataSource, UITableViewDelegate {
         let randomVC = R.storyboard.main.randomVC()!
         randomVC.meal = searchedMeals?.meals?[indexPath.row]
         randomVC.isDetailView = true
-        present(randomVC, animated: true, completion: nil)
+        
+        let navigationController = UINavigationController(rootViewController: randomVC)
+        
+        present(navigationController, animated: true, completion: nil)
     }
 }
 

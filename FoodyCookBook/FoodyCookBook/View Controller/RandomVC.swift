@@ -8,6 +8,11 @@ class RandomVC: UIViewController {
     // MARK: Internal
 
     @IBOutlet var tableView: UITableView!
+    
+    lazy var closeButton: UIBarButtonItem = {
+        let image = UIImage(systemName: "xmark")?.withTintColor(R.color.gray3() ?? .gray).withRenderingMode(.alwaysOriginal)
+        return UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(btnClose))
+    }()
 
     var meal: Meal?
     var ingredients: [(ingredient: String, measure: String)] = []
@@ -18,6 +23,14 @@ class RandomVC: UIViewController {
         super.viewDidLoad()
 
         tableView.tableFooterView = UIView()
+        
+        if isDetailView {
+            navigationItem.title = meal?.idMeal ?? ""
+            navigationItem.leftBarButtonItem = closeButton
+        } else {
+            navigationItem.title = nil
+            navigationItem.leftBarButtonItem = nil
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +52,10 @@ class RandomVC: UIViewController {
         } failure: { error in
             print(error.debugDescription)
         } network: {}
+    }
+    
+    @IBAction func btnClose() {
+        dismiss(animated: true, completion: nil)
     }
 
     // MARK: Private
