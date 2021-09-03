@@ -10,20 +10,13 @@ class MealDetailCell: UITableViewCell {
     @IBOutlet var lblArea: UILabel!
     @IBOutlet var lblTags: UILabel!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-
     internal func configure(_ meal: Meal?) {
         guard meal != nil else {
             return
         }
 
-        imgMeal.kf.setImage(with: URL(string: (meal?.strMealThumb ?? "").appending("/preview")))
+        let processor = RoundCornerImageProcessor(cornerRadius: 15)
+        imgMeal.kf.setImage(with: URL(string: (meal?.strMealThumb ?? "").appending("/preview")), options: [.processor(processor)])
 
         lblName.text = meal?.strMeal
         lblCategory.text = meal?.strCategory

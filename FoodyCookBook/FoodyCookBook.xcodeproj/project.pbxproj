@@ -36,6 +36,9 @@
 		98E9D8FF26E216BF00F40907 /* MealDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E9D8FE26E216BF00F40907 /* MealDetailCell.swift */; };
 		98E9D90126E21E0300F40907 /* MealIngredientsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E9D90026E21E0300F40907 /* MealIngredientsCell.swift */; };
 		98E9D90326E224CB00F40907 /* MealInstructionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E9D90226E224CB00F40907 /* MealInstructionCell.swift */; };
+		98E9D90626E227CF00F40907 /* MealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E9D90526E227CF00F40907 /* MealCell.swift */; };
+		98E9D90826E2342300F40907 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E9D90726E2342300F40907 /* String.swift */; };
+		98E9D90A26E2398100F40907 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E9D90926E2398100F40907 /* UserDefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,9 @@
 		98E9D8FE26E216BF00F40907 /* MealDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailCell.swift; sourceTree = "<group>"; };
 		98E9D90026E21E0300F40907 /* MealIngredientsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealIngredientsCell.swift; sourceTree = "<group>"; };
 		98E9D90226E224CB00F40907 /* MealInstructionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealInstructionCell.swift; sourceTree = "<group>"; };
+		98E9D90526E227CF00F40907 /* MealCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCell.swift; sourceTree = "<group>"; };
+		98E9D90726E2342300F40907 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		98E9D90926E2398100F40907 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		DA4F2F1E7BE7EFF5A3E67D84 /* Pods_FoodyCookBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodyCookBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAA5F7C5C339399848B788FF /* Pods-FoodyCookBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyCookBook.debug.xcconfig"; path = "Target Support Files/Pods-FoodyCookBook/Pods-FoodyCookBook.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,9 +202,11 @@
 				98E9D8DD26E2093200F40907 /* NSObject.swift */,
 				98E9D8D926E2093200F40907 /* ReachabilityManager.swift */,
 				98E9D8F926E20AEB00F40907 /* SafeAreaLayout.swift */,
+				98E9D90726E2342300F40907 /* String.swift */,
 				98E9D8F726E20A7200F40907 /* UIImage.swift */,
 				98E9D8DF26E2093200F40907 /* UITableView.swift */,
 				98E9D8D726E2093200F40907 /* UIView.swift */,
+				98E9D90926E2398100F40907 /* UserDefaults.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -214,6 +222,7 @@
 		98E9D90426E2250C00F40907 /* Meal Cells */ = {
 			isa = PBXGroup;
 			children = (
+				98E9D90526E227CF00F40907 /* MealCell.swift */,
 				98E9D8FE26E216BF00F40907 /* MealDetailCell.swift */,
 				98E9D90026E21E0300F40907 /* MealIngredientsCell.swift */,
 				98E9D90226E224CB00F40907 /* MealInstructionCell.swift */,
@@ -358,13 +367,16 @@
 				98E9D8E626E2093200F40907 /* UIView.swift in Sources */,
 				98E9D8F826E20A7200F40907 /* UIImage.swift in Sources */,
 				98E9D8EC26E2093200F40907 /* NSObject.swift in Sources */,
+				98E9D90826E2342300F40907 /* String.swift in Sources */,
 				98E9D8CB26E205B700F40907 /* JSONSchemaSupport.swift in Sources */,
+				98E9D90626E227CF00F40907 /* MealCell.swift in Sources */,
 				98E9D8EE26E2093200F40907 /* UITableView.swift in Sources */,
 				98E9D8E826E2093200F40907 /* ReachabilityManager.swift in Sources */,
 				98E9D8CE26E206BE00F40907 /* QError.swift in Sources */,
 				98E9D90126E21E0300F40907 /* MealIngredientsCell.swift in Sources */,
 				98E9D8D026E2071100F40907 /* MealService.swift in Sources */,
 				98146A1526E1F800002C673A /* AppDelegate.swift in Sources */,
+				98E9D90A26E2398100F40907 /* UserDefaults.swift in Sources */,
 				98E9D8D226E2075700F40907 /* APIClient+Meals.swift in Sources */,
 				98E9D8D426E2080A00F40907 /* NetworkService.swift in Sources */,
 				98E9D8FA26E20AEB00F40907 /* SafeAreaLayout.swift in Sources */,
