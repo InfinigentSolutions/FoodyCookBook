@@ -384,8 +384,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Nqe-jC-l2e">
+                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="yVG-EO-sU5" id="KzT-k5-X8p"/>
+                                </connections>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Nn-h5-57v">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="139" width="414" height="674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MealCell" id="0rP-Ib-Gjk" customClass="MealCell" customModule="FoodyCookBook" customModuleProvider="target">
@@ -452,22 +459,33 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="yVG-EO-sU5" id="5MO-ef-ehP"/>
+                                    <outlet property="delegate" destination="yVG-EO-sU5" id="P4K-Uw-MFF"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X3w-YU-Vdg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7Nn-h5-57v" firstAttribute="leading" secondItem="X3w-YU-Vdg" secondAttribute="leading" id="2hx-NP-nO9"/>
-                            <constraint firstItem="7Nn-h5-57v" firstAttribute="top" secondItem="X3w-YU-Vdg" secondAttribute="top" id="YTg-8b-Jcg"/>
+                            <constraint firstItem="7Nn-h5-57v" firstAttribute="top" secondItem="Nqe-jC-l2e" secondAttribute="bottom" id="8xo-FS-07X"/>
+                            <constraint firstItem="Nqe-jC-l2e" firstAttribute="top" secondItem="X3w-YU-Vdg" secondAttribute="top" id="AnM-bH-UmO"/>
+                            <constraint firstItem="Nqe-jC-l2e" firstAttribute="leading" secondItem="X3w-YU-Vdg" secondAttribute="leading" id="C2r-co-Chi"/>
+                            <constraint firstItem="Nqe-jC-l2e" firstAttribute="trailing" secondItem="X3w-YU-Vdg" secondAttribute="trailing" id="PNx-xA-86A"/>
                             <constraint firstItem="X3w-YU-Vdg" firstAttribute="bottom" secondItem="7Nn-h5-57v" secondAttribute="bottom" id="ZSk-R4-ZC9"/>
                             <constraint firstItem="X3w-YU-Vdg" firstAttribute="trailing" secondItem="7Nn-h5-57v" secondAttribute="trailing" id="dJx-tO-IjI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Favourite Meals" id="7GL-qf-yM0"/>
+                    <connections>
+                        <outlet property="searchBar" destination="Nqe-jC-l2e" id="9IG-H4-T4M"/>
+                        <outlet property="tableView" destination="7Nn-h5-57v" id="v1O-yx-jQM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NvI-hD-SU9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-713" y="-433"/>
+            <point key="canvasLocation" x="-713.04347826086962" y="-433.25892857142856"/>
         </scene>
     </scenes>
     <resources>

@@ -11,6 +11,8 @@ class RandomVC: UIViewController {
 
     var meal: Meal?
     var ingredients: [(ingredient: String, measure: String)] = []
+    
+    var isDetailView: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +23,12 @@ class RandomVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        getRandomMeal()
+        if !isDetailView {
+            getRandomMeal()
+        } else {
+            loadIngredients()
+            tableView.reloadData()
+        }
     }
 
     internal func getRandomMeal() {

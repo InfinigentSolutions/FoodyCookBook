@@ -61,6 +61,13 @@ extension FavouritesVC: UITableViewDataSource, UITableViewDelegate {
         cell.delegate = self
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let randomVC = R.storyboard.main.randomVC()!
+        randomVC.meal = searchedMeals?.meals?[indexPath.row]
+        randomVC.isDetailView = true
+        present(randomVC, animated: true, completion: nil)
+    }
 }
 
 // MARK: - UISearchBarDelegate
@@ -110,5 +117,7 @@ extension FavouritesVC: MealCellDelegate {
 
             UserDefaults.favouriteMeals = arrMeal
         }
+        
+        getMeals()
     }
 }
