@@ -1,11 +1,31 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '10.0'
+platform :ios, '13.0'
 use_frameworks!
 
 target 'FoodyCookBook' do
   
   pod 'Alamofire'
+  pod 'IQKeyboardManagerSwift'
+  pod 'NotificationBannerSwift'
+  pod 'PanModal'
+  pod 'ProgressHUD'
   pod 'R.swift'
+  pod 'SwifterSwift'
+  pod 'SwiftyJSON'
+  pod 'Kingfisher'
   
 end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+      config.build_settings['GCC_WARN_INHIBIT_ALL_WARNINGS'] = "YES"
+      config.build_settings['SWIFT_SUPPRESS_WARNINGS'] = "YES"
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+      config.build_settings['DEBUG_INFORMATION_FORMAT'] = 'dwarf'
+    end
+  end
+end
+
